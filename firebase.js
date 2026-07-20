@@ -15,3 +15,21 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
 console.log("SANUVA Firebase Connected!");
+import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
+
+const registerBtn = document.getElementById("registerBtn");
+
+if (registerBtn) {
+  registerBtn.addEventListener("click", () => {
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        alert("Welcome to SANUVA 🎉");
+      })
+      .catch((error) => {
+        alert(error.message);
+      });
+  });
+             }
