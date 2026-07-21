@@ -26,7 +26,8 @@ if (registerBtn) {
 
     createUserWithEmailAndPassword(auth, email, password)
 .then(() => {
-  window.location.href = "login.html";
+  alert("Account created successfully!");
+  location.replace("./login.html");
 })
       .catch((error) => {
         alert(error.message);
