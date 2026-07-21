@@ -25,9 +25,9 @@ if (registerBtn) {
     const password = document.getElementById("password").value;
 
     createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        alert("Welcome to SANUVA 🎉");
-      })
+.then(() => {
+  window.location.href = "login.html";
+})
       .catch((error) => {
         alert(error.message);
       });
